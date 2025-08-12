@@ -1,16 +1,86 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <h1 style="text-align: center">Login</h1> 
-    </head> 
-    <body> 
-        <div> 
-            <form> 
-        <input type="text" placeholder="Masukkan Username" style="width: 100%"; padding: 1Opx; margin: 10px; text-align: center" required /> <br /> 
-        <input type="password" placeholder="Masukkan Password" style="width: 100%"; padding: 1Opx; margin: 10px; text-align: center" required /> 
-        <button type="submit" style="background-color: #5c9ded; padding: 1Opx; margin: 10px; width:100%">Login</ button><br /> 
-        <p style="text-align: center">Belum punya akun ? <a class"" href="#" style= "text-align: center" >Daftar akun</a></p> 
-            </form> 
-        </div> 
-    </body> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            body {
+                font-family: Arial, Sans-Serif;
+                background-color: green;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            
+            .login-container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+            
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+            
+            input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                background-color: #45a049;
+            }
+            
+            .error {
+                color: red;
+                font-size: 12px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form id="loginForm">
+            <input type="text" id="username" placeholder="Masukkan username"  />
+            <input type="password" id="password"placeholder="Masukkan password"  />
+            <button type="submit">Login</button>
+            <p>Belum punya Akun? <a class="" href="#">Daftar akun</a></p>
+            <div id="error-message" class="error"></div>
+            </form>
+    </div>
+    
+    <script>
+        document.getElementById("loginForm").addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form untuk submi
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var errorMessage = document.getElementById('error-message');
+        
+        //validasi
+        if(username === ''|| password === '') {
+            errorMessage.textContent = 'gaboleh kosong woy!!';}
+        });
+    </script>
+    </body>
 </html>
